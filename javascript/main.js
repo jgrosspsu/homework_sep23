@@ -14,19 +14,23 @@ function App() {
  */
 // write your code for addItemToList here...
 
-<!-- // var arr = ['Laundry', 'Dishes', 'Trash'];
-// arr.push("Hola");
-// console.log (arr); -->
+//  var arr = ['Laundry', 'Dishes', 'Trash'];
 
-function addItemToList (arr, item) {   
-    arr.push("item");
-    return ('arr');
-}
-
-    var arr = ['Laundry', 'Dishes', 'Trash'];
-    arr.push("Clean");
-    console.log(arr);
+ function addItemToList (arr, item) { 
+    var itemType = typeof item;
+    if (itemType !== 'string') {
+        return (arr);
+    }
     
+    else {
+    arr.push(item);
+    return (arr);
+    }
+}   
+    var arr = ['Laundry', 'Dishes', 'Trash'];
+    addItemToList (arr, 'Clean');
+    console.log(arr);
+
 /**
  *  @addItemToListFront
  *  arguments:
@@ -37,9 +41,19 @@ function addItemToList (arr, item) {
  */
 // write your code for addItemToListFront here...
 
-    arr.unshift('Shop');
+function addItemToListFront (arr, item) { 
+    var itemType = typeof item;
+    if (itemType !== 'string') {
+        return (arr);
+    }
+    
+    else {
+    arr.unshift(item);
+    return (arr);
+    }
+}   
+    addItemToListFront (arr, 'Shop');
     console.log(arr);
-
 
 /**
  *  @removeItemFromListEnd
@@ -50,7 +64,11 @@ function addItemToList (arr, item) {
  */
 // write your code for removeItemFromListEnd here...
 
+function removeItemFromListEnd (arr) { 
     arr.pop();
+    return (arr);
+}   
+    removeItemFromListEnd (arr);
     console.log(arr);
 
 /**
@@ -62,7 +80,11 @@ function addItemToList (arr, item) {
  */
 // write your code for removeItemFromListStart here...
 
+function removeItemFromListStart (arr) { 
     arr.shift();
+    return (arr);
+}   
+    removeItemFromListStart (arr);
     console.log(arr);
 
 /**
@@ -75,7 +97,17 @@ function addItemToList (arr, item) {
  */
 // write your code for getItemFromList here...
 
-
+function getItemFromList (arr, i) { 
+    var selector = arr[i];
+    console.log(selector);
+    return selector;
+ 
+}   
+    getItemFromList (arr, 2);
+    console.log();
+    
+    
+    // console.log(arr[2]);
 
 /**
  *  @removeItemFromPosition
@@ -86,7 +118,6 @@ function addItemToList (arr, item) {
  *      arr
  */
 // write your code for removeItemFromPosition here...
-
 /**
  *  @checkForDupes
  *  THIS IS AN EXTRA CREDIT PROBLEM
@@ -160,4 +191,4 @@ App();
 function caller() {
     return App;
 }
-caller();/* CURRENTLY IN: javascript/main.js */
+caller();
